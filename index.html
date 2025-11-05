@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Valley School - Nurturing Young Minds</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5e6d3 0%, #e8f4f8 50%, #f0e8f5 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Decorative elements */
+        body::before {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: rgba(169, 209, 142, 0.15);
+            top: -50px;
+            left: -50px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        body::after {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: rgba(176, 196, 222, 0.15);
+            bottom: -30px;
+            right: -30px;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) translateX(0);
+            }
+            50% {
+                transform: translateY(-20px) translateX(20px);
+            }
+        }
+
+        .container {
+            background: white;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            padding: 60px 40px;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-container {
+            margin-bottom: 40px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .logo {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(169, 209, 142, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .decorative-circle {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border: 3px solid #b4d4e1;
+            border-radius: 50%;
+            opacity: 0.4;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.3;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.1;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 2.5em;
+            background: linear-gradient(135deg, #87ceeb 0%, #a9d18e 35%, #e6b8af 70%, #b4a7d6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            font-weight: 700;
+            animation: fadeIn 1s ease-out 0.2s both;
+        }
+
+        .tagline {
+            color: #546e7a;
+            font-size: 1.2em;
+            margin-bottom: 50px;
+            font-weight: 400;
+            animation: fadeIn 1s ease-out 0.4s both;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #a9d18e, #93c47d);
+            color: white;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        .btn-whatsapp:hover {
+            background: linear-gradient(135deg, #93c47d, #7fb069);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(169, 209, 142, 0.4);
+        }
+
+        .btn-whatsapp::before {
+            content: '💬';
+            margin-right: 10px;
+            font-size: 1.3em;
+        }
+
+        .btn-directions {
+            background: white;
+            color: #424242;
+            border: 2px solid #e0e0e0;
+            animation: fadeInUp 0.8s ease-out 0.8s both;
+        }
+
+        .btn-directions:hover {
+            background: #f5f5f5;
+            border-color: #bdbdbd;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-directions::before {
+            content: '📍';
+            margin-right: 10px;
+            font-size: 1.3em;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, #f9f5f0, #fef9f3);
+            padding: 25px;
+            border-radius: 20px;
+            animation: fadeInUp 0.8s ease-out 1s both;
+            position: relative;
+            border: 2px solid #e8dfd6;
+        }
+
+        .contact-info::before {
+            content: '✨';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 1.5em;
+        }
+
+        .contact-info::after {
+            content: '✨';
+            position: absolute;
+            bottom: -10px;
+            right: 20px;
+            font-size: 1.5em;
+        }
+
+        .contact-info p {
+            color: #37474f;
+            font-size: 1em;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .location {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .phone {
+            color: #93c47d;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .phone:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .container {
+                padding: 40px 25px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .tagline {
+                font-size: 1em;
+            }
+
+            .logo {
+                width: 160px;
+                height: 160px;
+            }
+
+            .logo::before {
+                font-size: 50px;
+            }
+
+            .decorative-circle {
+                width: 180px;
+                height: 180px;
+            }
+
+            .btn {
+                font-size: 1em;
+                padding: 16px 25px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <div class="decorative-circle"></div>
+            <div class="logo">
+                <img src="logo.png" alt="Kids Valley School Logo">
+            </div>
+        </div>
+
+        <h1>Kids Valley School</h1>
+        <p class="tagline">Nurturing Young Minds</p>
+
+        <div class="buttons">
+            <a href="https://wa.me/917551880133" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+                Chat on WhatsApp
+            </a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Subash+Dutta+Nagar+Guma" class="btn btn-directions" target="_blank" rel="noopener noreferrer">
+                Get Directions
+            </a>
+        </div>
+
+        <div class="contact-info">
+            <p class="location">Subash Dutta Nagar, Guma</p>
+            <p><a href="tel:+917551880133" class="phone">7551880133</a></p>
+        </div>
+    </div>
+</body>
+</html>
